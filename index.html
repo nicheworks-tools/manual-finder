@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>製品マニュアルリスト（ManualFinder） | NicheWorks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="主要メーカー公式サイトの製品マニュアル・取扱説明書ページへのリンク集。ブラウザだけで完結・ログ送信なし。"
+  />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="nw-header">
+    <div class="nw-header-inner">
+      <div>
+        <h1 class="nw-title">製品マニュアルリスト（ManualFinder）</h1>
+        <p class="nw-subtitle">
+          家電・カメラ・PC・スマホなどの
+          <strong>「公式マニュアル／取扱説明書ページ」だけ</strong>
+          を素早く探すためのシンプルなリンク集。ブラウザ完結・ログ送信なし。
+        </p>
+      </div>
+      <span class="nw-label">NicheWorks</span>
+    </div>
+  </header>
+
+  <main class="nw-main">
+    <!-- 上部広告枠（プレースホルダ） -->
+    <div class="ad-slot ad-top">
+      <span class="ad-label">AD</span>
+      <span class="ad-text">ここに広告が入ります（ManualFinder 共通ヘッダー枠）</span>
+    </div>
+
+    <!-- 操作エリア -->
+    <section class="panel">
+      <h2 class="panel-title">メーカーから探す</h2>
+      <div class="controls">
+        <div class="control-group">
+          <label for="searchInput">メーカー名・キーワード</label>
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="例：Apple / Sony / Canon / カメラ / 家電"
+          />
+        </div>
+
+        <div class="control-group">
+          <label for="categorySelect">カテゴリ</label>
+          <select id="categorySelect">
+            <option value="">すべて</option>
+            <option value="PC・スマホ">PC・スマホ</option>
+            <option value="カメラ・映像">カメラ・映像</option>
+            <option value="家電">家電</option>
+            <option value="プリンター・複合機">プリンター・複合機</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <span class="label-inline">クイック選択</span>
+          <div class="quick-buttons" id="quickButtons">
+            <!-- JSで自動生成 or 手動指定 -->
+            <button type="button" data-brand="Apple">Apple</button>
+            <button type="button" data-brand="Sony">Sony</button>
+            <button type="button" data-brand="Panasonic">Panasonic</button>
+            <button type="button" data-brand="Canon">Canon</button>
+            <button type="button" data-brand="Nikon">Nikon</button>
+            <button type="button" data-brand="Fujifilm">Fujifilm</button>
+          </div>
+        </div>
+      </div>
+      <p class="helper-text">
+        ※ここで表示しているのは
+        <strong>各社公式のマニュアル／サポートページへのリンク</strong>
+        です（順次追加予定）。実際のマニュアルは遷移先で検索してください。
+      </p>
+    </section>
+
+    <!-- 結果エリア -->
+    <section class="panel">
+      <div class="panel-header-row">
+        <h2 class="panel-title">公式マニュアルリンク一覧</h2>
+        <div class="count" id="resultCount">- 件</div>
+      </div>
+      <div id="results" class="card-list">
+        <!-- JSで manuals.json から生成 -->
+      </div>
+      <div id="emptyMessage" class="empty-message" hidden>
+        該当するメーカーが見つかりませんでした。キーワードを変えるか、「すべて」に戻してお試しください。
+      </div>
+    </section>
+
+    <!-- 注意書き -->
+    <section class="panel panel-note">
+      <h2 class="panel-title">利用上の注意</h2>
+      <ul class="note-list">
+        <li>リンク先は各社の公式サイトです。URLや内容は予告なく変更される場合があります。</li>
+        <li>本ページは各メーカーとは非公式・非提携です。マニュアル内容については各社公式情報をご確認ください。</li>
+        <li>このツールは入力内容やマニュアル検索結果をサーバーに送信しません（静的サイト構成）。</li>
+      </ul>
+    </section>
+
+    <!-- 下部広告枠（プレースホルダ） -->
+    <div class="ad-slot ad-bottom">
+      <span class="ad-label">AD</span>
+      <span class="ad-text">ここに広告が入ります（ManualFinder 共通フッター枠）</span>
+    </div>
+  </main>
+
+  <footer class="nw-footer">
+    <div class="nw-footer-inner">
+      <div class="nw-footer-left">
+        <p class="nw-footer-title">NicheWorks Tools</p>
+        <p class="nw-footer-text">
+          匿名＆シンプルを基本方針としたニッチ特化ツール群。
+          ManualFinder は「公式マニュアルへの最短導線」を提供する非公式リンク集です。
+        </p>
+      </div>
+      <div class="nw-footer-right">
+        <p class="nw-footer-mini">
+          © <span id="year"></span> NicheWorks / ManualFinder.
+          No tracking, no login.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

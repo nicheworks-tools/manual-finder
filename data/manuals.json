@@ -1,0 +1,142 @@
+[
+  {
+    "brand": "Apple",
+    "nameJa": "Apple（アップル）",
+    "nameEn": "Apple",
+    "category": "PC・スマホ",
+    "country": "Global",
+    "manualUrl": "https://support.apple.com/en-us/docs",
+    "supportUrl": "https://support.apple.com/",
+    "note": "Mac / iPhone / iPad など、Apple製品全般のマニュアルと技術仕様。"
+  },
+  {
+    "brand": "Sony",
+    "nameJa": "ソニー",
+    "nameEn": "Sony",
+    "category": "カメラ・映像",
+    "country": "Japan / Global",
+    "manualUrl": "https://www.sony.jp/support/manual.html",
+    "supportUrl": "https://www.sony.com/electronics/support/manuals",
+    "note": "テレビ・オーディオ・カメラなどソニー製品の取扱説明書ページ。"
+  },
+  {
+    "brand": "Panasonic",
+    "nameJa": "パナソニック",
+    "nameEn": "Panasonic",
+    "category": "家電",
+    "country": "Japan / Global",
+    "manualUrl": "https://panasonic.jp/support/manual.html",
+    "supportUrl": "https://help.na.panasonic.com/manuals/",
+    "note": "生活家電・カメラ・AV機器などの取扱説明書検索。"
+  },
+  {
+    "brand": "Canon",
+    "nameJa": "キヤノン",
+    "nameEn": "Canon",
+    "category": "プリンター・複合機",
+    "country": "Japan / Global",
+    "manualUrl": "https://canon.jp/support/manual",
+    "supportUrl": "https://www.usa.canon.com/support/user-manual-library",
+    "note": "カメラ・プリンター等の公式マニュアルダウンロードページ。"
+  },
+  {
+    "brand": "Nikon",
+    "nameJa": "ニコン",
+    "nameEn": "Nikon",
+    "category": "カメラ・映像",
+    "country": "Global",
+    "manualUrl": "https://downloadcenter.nikonimglib.com/",
+    "supportUrl": "https://www.nikonimgsupport.com/",
+    "note": "デジタルカメラやレンズのマニュアル・ファームウェア配布サイト。"
+  },
+  {
+    "brand": "Fujifilm",
+    "nameJa": "富士フイルム",
+    "nameEn": "Fujifilm",
+    "category": "カメラ・映像",
+    "country": "Global",
+    "manualUrl": "https://www.fujifilm-x.com/global/support/manual/cameras/",
+    "supportUrl": "https://www.fujifilm-x.com/global/support/",
+    "note": "Xシリーズ / GFX などカメラ関連マニュアル。"
+  },
+  {
+    "brand": "Sharp",
+    "nameJa": "シャープ",
+    "nameEn": "Sharp",
+    "category": "家電",
+    "country": "Japan / Global",
+    "manualUrl": "https://jp.sharp/support/download.html",
+    "supportUrl": "https://global.sharp/support/download.html",
+    "note": "家電・AV機器などの取扱説明書ダウンロード。"
+  },
+  {
+    "brand": "Toshiba",
+    "nameJa": "東芝 / dynabook",
+    "nameEn": "Toshiba",
+    "category": "PC・スマホ",
+    "country": "Global",
+    "manualUrl": "https://support.dynabook.com/",
+    "supportUrl": "https://tbs.toshiba.com/tbs/support/",
+    "note": "dynabook等PCおよび一部周辺機器のマニュアル／ドライバー。"
+  },
+  {
+    "brand": "HP",
+    "nameJa": "日本HP",
+    "nameEn": "HP",
+    "category": "PC・スマホ",
+    "country": "Global",
+    "manualUrl": "https://support.hp.com/us-en/drivers",
+    "supportUrl": "https://support.hp.com/",
+    "note": "HP製PC・プリンターのマニュアル／サポート。モデル検索が必要。"
+  },
+  {
+    "brand": "Dell",
+    "nameJa": "デル",
+    "nameEn": "Dell",
+    "category": "PC・スマホ",
+    "country": "Global",
+    "manualUrl": "https://www.dell.com/support/home/en-us?app=manuals",
+    "supportUrl": "https://www.dell.com/support/home",
+    "note": "サービスタグまたは製品選択からマニュアルを取得。"
+  },
+  {
+    "brand": "Lenovo",
+    "nameJa": "レノボ",
+    "nameEn": "Lenovo",
+    "category": "PC・スマホ",
+    "country": "Global",
+    "manualUrl": "https://support.lenovo.com/us/en/docs",
+    "supportUrl": "https://support.lenovo.com/",
+    "note": "ThinkPad などの製品マニュアル・ドキュメント。"
+  },
+  {
+    "brand": "Microsoft",
+    "nameJa": "マイクロソフト（Surface）",
+    "nameEn": "Microsoft",
+    "category": "PC・スマホ",
+    "country": "Global",
+    "manualUrl": "https://support.microsoft.com/surface",
+    "supportUrl": "https://support.microsoft.com/",
+    "note": "Surface シリーズ等のマニュアル・クイックスタートガイド。"
+  },
+  {
+    "brand": "Samsung",
+    "nameJa": "サムスン",
+    "nameEn": "Samsung",
+    "category": "家電",
+    "country": "Global",
+    "manualUrl": "https://www.samsung.com/support/downloads/",
+    "supportUrl": "https://www.samsung.com/support/",
+    "note": "スマートフォン・TV・家電のマニュアルとソフトウェア。"
+  },
+  {
+    "brand": "Brother",
+    "nameJa": "ブラザー",
+    "nameEn": "Brother",
+    "category": "プリンター・複合機",
+    "country": "Global",
+    "manualUrl": "https://support.brother.com/",
+    "supportUrl": "https://support.brother.com/",
+    "note": "プリンター・複合機・スキャナー等のマニュアル。"
+  }
+]

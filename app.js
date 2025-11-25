@@ -2,24 +2,44 @@
   const state = {
     manuals: [],
     filtered: [],
+    lang: "ja",
   };
 
   const els = {
     results: document.getElementById("results"),
     resultCount: document.getElementById("resultCount"),
-    emptyMessage: document.getElementById("emptyMessage"),
+    emptyJa: document.getElementById("emptyMessage"),
+    emptyEn: document.getElementById("emptyMessageEn"),
     searchInput: document.getElementById("searchInput"),
     categorySelect: document.getElementById("categorySelect"),
     quickButtons: document.getElementById("quickButtons"),
-    year: document.getElementById("year"),
+    langButtons: document.querySelectorAll(".nw-lang-switch button"),
+    i18nNodes: document.querySelectorAll("[data-i18n]"),
   };
 
-  // 年表示
-  if (els.year) {
-    els.year.textContent = new Date().getFullYear();
+  // ===== 多言語切替（共通仕様 7章 / パターンA） =====
+  function applyLang(lang) {
+    state.lang = lang;
+    els.i18nNodes.forEach((el) => {
+      el.style.display = el.dataset.i18n === lang ? "" : "none";
+    });
+    els.langButtons.forEach((b) =>
+      b.classList.toggle("active", b.dataset.lang === lang)
+    );
   }
 
-  // データ読み込み
+  function initLang() {
+    const browserLang = (navigator.language || "").toLowerCase();
+    const initial = browserLang.startsWith("ja") ? "ja" : "en";
+    applyLang(initial);
+
+    els.langButtons.forEach((btn) => {
+      btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+    });
+  }
+  initLang();
+
+  // ===== データ読み込み =====
   fetch("./data/manuals.json", { cache: "no-store" })
     .then((res) => {
       if (!res.ok) throw new Error("failed to load manuals.json");
@@ -34,15 +54,13 @@
       console.error(err);
       els.results.innerHTML =
         '<div class="empty-message">manuals.json の読み込みに失敗しました。パスまたはJSON構造を確認してください。</div>';
-      els.resultCount.textContent = "0 件";
+      els.resultCount.textContent = "0";
     });
 
-  // フィルター適用
+  // ===== フィルター =====
   function applyFilter(quickBrand) {
     const keywordRaw = (els.searchInput.value || "").trim().toLowerCase();
-    const keyword = quickBrand
-      ? quickBrand.toLowerCase()
-      : keywordRaw;
+    const keyword = quickBrand ? quickBrand.toLowerCase() : keywordRaw;
     const category = els.categorySelect.value;
 
     let list = state.manuals.slice();
@@ -71,20 +89,21 @@
     render();
   }
 
-  // 描画
+  // ===== 描画 =====
   function render() {
     const list = state.filtered;
-
     els.results.innerHTML = "";
 
     if (!list.length) {
-      els.emptyMessage.hidden = false;
-      els.resultCount.textContent = "0 件";
+      if (els.emptyJa) els.emptyJa.hidden = state.lang !== "ja";
+      if (els.emptyEn) els.emptyEn.hidden = state.lang !== "en";
+      els.resultCount.textContent = "0";
       return;
     }
 
-    els.emptyMessage.hidden = true;
-    els.resultCount.textContent = `${list.length} 件`;
+    if (els.emptyJa) els.emptyJa.hidden = true;
+    if (els.emptyEn) els.emptyEn.hidden = true;
+    els.resultCount.textContent = `${list.length}`;
 
     const frag = document.createDocumentFragment();
 
@@ -118,7 +137,7 @@
 
       const tag = document.createElement("div");
       tag.className = "tag-official";
-      tag.textContent = "Official manual / support";
+      tag.textContent = "Official";
 
       right.appendChild(cat);
       if (item.country) right.appendChild(country);
@@ -143,7 +162,7 @@
         a.href = item.manualUrl;
         a.target = "_blank";
         a.rel = "noopener noreferrer";
-        a.textContent = "マニュアルページ";
+        a.textContent = state.lang === "ja" ? "マニュアル" : "Manuals";
         links.appendChild(a);
       }
 
@@ -152,7 +171,7 @@
         a.href = item.supportUrl;
         a.target = "_blank";
         a.rel = "noopener noreferrer";
-        a.textContent = "サポートTOP";
+        a.textContent = state.lang === "ja" ? "サポートTOP" : "Support";
         links.appendChild(a);
       }
 
@@ -163,7 +182,7 @@
     els.results.appendChild(frag);
   }
 
-  // イベント
+  // ===== イベント =====
   els.searchInput.addEventListener("input", () => applyFilter());
   els.categorySelect.addEventListener("change", () => applyFilter());
 
